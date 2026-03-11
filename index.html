@@ -1,4 +1,4 @@
-
+```html
 <!DOCTYPE html>
 <html lang="en">
 
@@ -7,7 +7,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>CareerNavigator</title>
+<title>Career Navigator</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
@@ -31,8 +31,9 @@ color:#333;
 display:flex;
 justify-content:space-between;
 align-items:center;
-padding:18px 80px;
-background:white;
+padding:15px 70px;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
 box-shadow:0 5px 15px rgba(0,0,0,0.08);
 position:sticky;
 top:0;
@@ -48,6 +49,7 @@ align-items:center;
 width:50px;
 margin-right:10px;
 }
+
 .logo-text{
 font-size:24px;
 font-weight:600;
@@ -55,10 +57,12 @@ color:#1c4e80;
 }
 
 nav a{
-margin-left:25px;
+margin-left:30px;
 text-decoration:none;
 color:#333;
 font-weight:500;
+font-size:15px;
+transition:0.3s;
 }
 
 nav a:hover{
@@ -68,122 +72,82 @@ color:#f28c28;
 /* HERO */
 
 .hero{
-height:550px;
-
+height:520px;
 background:
-linear-gradient(rgba(0,0,0,0.65),rgba(0,0,0,0.65)),
+linear-gradient(rgba(0,0,0,0.6),rgba(0,0,0,0.6)),
 url("https://images.unsplash.com/photo-1523240795612-9a054b0db644");
-
 background-size:cover;
 background-position:center;
-
 display:flex;
 align-items:center;
-justify-content:center;
-text-align:center;
-color:white;
-padding:20px;
+padding-left:80px;
 }
 
-.hero h1{
+.hero-text{
+color:white;
+max-width:600px;
+}
+
+.hero-text h1{
 font-size:48px;
 margin-bottom:20px;
 }
 
-.hero p{
+.hero-text p{
 font-size:18px;
-max-width:700px;
-margin:auto;
+line-height:1.6;
 margin-bottom:30px;
 }
 
-.btn{
+.primary-btn{
 background:#f28c28;
 color:white;
-padding:14px 32px;
 border:none;
-border-radius:8px;
+padding:14px 30px;
 font-size:16px;
+border-radius:8px;
 cursor:pointer;
-}
-
-.btn:hover{
-background:#d8741c;
-}
-
-/* FEATURES */
-
-.features{
-padding:80px 60px;
-text-align:center;
-background:white;
-}
-
-.features h2{
-font-size:34px;
-margin-bottom:40px;
-color:#1c4e80;
-}
-
-.feature-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:30px;
-}
-
-.feature-card{
-background:#f8fafc;
-padding:35px;
-border-radius:12px;
-box-shadow:0 6px 15px rgba(0,0,0,0.08);
 transition:0.3s;
 }
 
-.feature-card:hover{
-transform:translateY(-6px);
+.primary-btn:hover{
+background:#d8741c;
+transform:translateY(-2px);
 }
 
-.feature-icon{
-font-size:40px;
-margin-bottom:15px;
-}
+/* CHALLENGE */
 
-.feature-card h3{
-margin-bottom:10px;
-}
-
-/* STATS */
-
-.stats{
-background:#1c4e80;
-color:white;
-padding:70px 40px;
+.challenge{
 text-align:center;
+padding:80px 120px;
+background:white;
 }
 
-.stats-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
-gap:30px;
-margin-top:30px;
+.challenge h2{
+font-size:32px;
+margin-bottom:20px;
+color:#1c4e80;
 }
 
-.stat{
-font-size:30px;
-font-weight:600;
+.challenge p{
+font-size:18px;
+line-height:1.7;
+max-width:800px;
+margin:auto;
 }
 
 /* FOOTER */
 
 footer{
-background:#111827;
+background:#1c4e80;
 color:white;
 text-align:center;
 padding:25px;
-font-size:14px;
+margin-top:60px;
+font-size:15px;
 }
 
-/* AI CHAT */
+/* AI BUTTON */
 
 .ai-chat-button{
 position:fixed;
@@ -200,7 +164,10 @@ justify-content:center;
 border-radius:50%;
 cursor:pointer;
 box-shadow:0 6px 18px rgba(0,0,0,0.3);
+z-index:1000;
 }
+
+/* CHATBOX */
 
 .ai-chatbox{
 position:fixed;
@@ -213,6 +180,7 @@ box-shadow:0 10px 30px rgba(0,0,0,0.25);
 display:none;
 flex-direction:column;
 overflow:hidden;
+font-size:14px;
 }
 
 .chat-header{
@@ -231,6 +199,10 @@ padding:10px;
 background:#f7f9fc;
 }
 
+.chat-body p{
+margin-bottom:8px;
+}
+
 .chat-input{
 display:flex;
 border-top:1px solid #ddd;
@@ -240,6 +212,7 @@ border-top:1px solid #ddd;
 flex:1;
 border:none;
 padding:10px;
+outline:none;
 }
 
 .chat-input button{
@@ -247,6 +220,7 @@ background:#f28c28;
 border:none;
 color:white;
 padding:10px 15px;
+cursor:pointer;
 }
 
 </style>
@@ -261,7 +235,7 @@ padding:10px 15px;
 <img src="logo.png" class="logo-img">
 <span class="logo-text">CareerNavigator</span>
 </div>
-  
+
 <nav>
 <a href="index.html">Home</a>
 <a href="quiz.html">Quiz</a>
@@ -274,7 +248,7 @@ padding:10px 15px;
 
 <section class="hero">
 
-<div>
+<div class="hero-text">
 
 <h1>Navigate Your Future With Smart Career Guidance</h1>
 
@@ -283,7 +257,7 @@ CareerNavigator helps students explore the best career options,
 courses, and colleges based on their interests, skills, and goals.
 </p>
 
-<button class="btn"
+<button class="primary-btn"
 onclick="window.location.href='getstarted.html'">
 Get Started
 </button>
@@ -293,64 +267,23 @@ Get Started
 </section>
 
 
-<section class="features">
+<section class="challenge">
 
-<h2>What We Offer</h2>
+<h2>The Challenge Students Face</h2>
 
-<div class="feature-grid">
-
-<div class="feature-card">
-<div class="feature-icon">🤖</div>
-<h3>AI Career Advisor</h3>
-<p>Ask our AI assistant for career guidance and course recommendations.</p>
-</div>
-
-<div class="feature-card">
-<div class="feature-icon">🧠</div>
-<h3>Aptitude Quiz</h3>
-<p>Discover your strengths through our intelligent career assessment quiz.</p>
-</div>
-
-<div class="feature-card">
-<div class="feature-icon">🎓</div>
-<h3>Course Explorer</h3>
-<p>Explore courses after 12th  across all streams.</p>
-</div>
-
-</div>
-
-</section>
-
-
-<section class="stats">
-
-<h2>Helping Students Make Better Decisions</h2>
-
-<div class="stats-grid">
-
-<div>
-<div class="stat">10,000+</div>
-Students Guided
-</div>
-
-<div>
-<div class="stat">200+</div>
-Career Paths
-</div>
-
-<div>
-<div class="stat">50+</div>
-Courses Covered
-</div>
-
-</div>
+<p>
+Many students struggle to choose the right career path due to lack of
+guidance and awareness about opportunities. CareerNavigator provides
+quizzes, AI tools and career resources to help students make confident
+decisions about their future.
+</p>
 
 </section>
 
 
 <footer>
 
-<p>© 2026 CareerNavigator | AI Career Guidance Platform</p>
+<p>© 2026 CareerNavigator Platform</p>
 
 </footer>
 
@@ -361,16 +294,16 @@ Courses Covered
 <div class="ai-chatbox" id="aiChatbox">
 
 <div class="chat-header">
-Career AI
+Career AI Advisor
 <span onclick="toggleChat()">✖</span>
 </div>
 
 <div class="chat-body" id="chatBody">
-<p><b>AI:</b> Hello! Ask me about careers.</p>
+<p><b>AI:</b> Hello 👋 Ask me about careers.</p>
 </div>
 
 <div class="chat-input">
-<input type="text" id="userInput" placeholder="Ask about careers">
+<input type="text" id="userInput" placeholder="Ask about careers...">
 <button onclick="sendMessage()">Send</button>
 </div>
 
@@ -402,7 +335,7 @@ chatBody.innerHTML += "<p><b>You:</b> "+message+"</p>";
 
 input.value="";
 
-let reply=getAIResponse(message);
+let reply = getAIResponse(message);
 
 chatBody.innerHTML += "<p><b>AI:</b> "+reply+"</p>";
 
@@ -411,19 +344,48 @@ chatBody.scrollTop=chatBody.scrollHeight;
 }
 
 
+document.getElementById("userInput").addEventListener("keypress",function(event){
+
+if(event.key==="Enter"){
+
+event.preventDefault();
+
+sendMessage();
+
+}
+
+});
+
+
 function getAIResponse(message){
 
-if(message.includes("engineering"))
-return "Engineering includes Computer Science, Mechanical, Civil and Electrical.";
+if(message.includes("engineering") || message.includes("btech")){
+return "Engineering fields include Computer Science, Mechanical, Civil, Electrical, and Artificial Intelligence.";
+}
 
-else if(message.includes("medical"))
-return "Medical careers include MBBS, BDS, Nursing, BAMS and Pharmacy.";
+else if(message.includes("medical") || message.includes("doctor") || message.includes("mbbs")){
+return "To become a doctor you need to clear the NEET exam and pursue MBBS. Other options include BDS, BAMS, BHMS and Nursing.";
+}
 
-else if(message.includes("commerce"))
-return "Commerce careers include CA, CS, BBA, MBA and Finance.";
+else if(message.includes("commerce") || message.includes("ca") || message.includes("business")){
+return "Commerce careers include CA, CS, CMA, BBA, BCom and MBA.";
+}
 
-else
-return "Ask me about careers after 12th.";
+else if(message.includes("after 10th")){
+return "After 10th you can choose Science, Commerce or Arts depending on your interest.";
+}
+
+else if(message.includes("after 12th")){
+return "After 12th you can pursue Engineering, Medical, Law, Design, Business or many other professional courses.";
+}
+
+else if(message.includes("computer") || message.includes("coding") || message.includes("software")){
+return "Computer careers include Software Developer, Data Scientist, AI Engineer, Web Developer and Cybersecurity.";
+}
+
+else{
+return "I can guide you about careers after 10th, 12th, engineering, medical, commerce and computer science.";
+}
 
 }
 
@@ -431,6 +393,4 @@ return "Ask me about careers after 12th.";
 
 </body>
 </html>
-
-
 
